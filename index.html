@@ -1,0 +1,125 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack Pro | Financial Tracking Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="background-animation"></div>
+    
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <i class="ri-money-dollar-circle-line"></i>
+            <span>FinTrack Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#transactions">Transactions</a>
+            <a href="#budgets">Budgets</a>
+            <a href="#goals">Goals</a>
+            <a href="#reports">Reports</a>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle">
+                <i class="ri-sun-line"></i>
+            </button>
+            <div class="user-profile">
+                <img src="https://picsum.photos/200/200?random=1" alt="Profile">
+                <span>John Doe</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="dashboard" class="dashboard-section">
+            <div class="dashboard-header">
+                <h1>Financial Dashboard</h1>
+                <div class="date-picker">
+                    <input type="month" value="2024-01">
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="glass-card balance-card">
+                    <div class="card-header">
+                        <i class="ri-wallet-3-line"></i>
+                        <h3>Total Balance</h3>
+                    </div>
+                    <div class="card-amount" id="balance"></div> <!--Balance-->
+                    <div class="card-trend positive">
+                        <i class="ri-arrow-up-line"></i>
+                        <span id="balanceChange"></span> <!--Balance percentage change-->
+                    </div>
+                </div>
+
+                <div class="glass-card income-card">
+                    <div class="card-header">
+                        <i class="ri-arrow-down-circle-line"></i>
+                        <h3>Income</h3>
+                    </div>
+                    <div class="card-amount" id="income">$8,350.00</div>
+                    <div class="card-trend positive">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>+8.2%</span>
+                    </div>
+                </div>
+
+                <div class="glass-card expenses-card">
+                    <div class="card-header">
+                        <i class="ri-arrow-up-circle-line"></i>
+                        <h3>Expenses</h3>
+                    </div>
+                    <div class="card-amount" id="expenses">$3,275.12</div>
+                    <div class="card-trend negative">
+                        <i class="ri-arrow-down-line"></i>
+                        <span>-3.1%</span>
+                    </div>
+                </div>
+
+                <div class="glass-card savings-card">
+                    <div class="card-header">
+                        <i class="ri-safe-2-line"></i>
+                        <h3>Savings</h3>
+                    </div>
+                    <div class="card-amount" id="savings">$5,074.88</div>
+                    <div class="card-trend positive">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>+15.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="glass-card chart-card">
+                    <h3>Spending Analysis</h3>
+                    <canvas id="spendingChart"></canvas>
+                </div>
+                <div class="glass-card chart-card">
+                    <h3>Income vs Expenses</h3>
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+
+            <div class="recent-transactions">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>Recent Transactions</h3>
+                        <button class="view-all">View All</button>
+                    </div>
+                    <div class="transactions-list">
+                        <!-- Transactions will be dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
